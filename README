@@ -1,0 +1,6 @@
+TODO:
+
+Add function to startup files to check git for new version. Prompt user to install
+
+Fix install.sh script
+Give ability to automate it completly to tie in with startup script
