@@ -53,6 +53,11 @@ LAST=$(dirname !$)
 PROMPT="%F{cyan}%n%f on %F{130}%m%f at %F{blue}%~%f"$'\n'"%(?..%{$FX[reset]$FG[203]%})$FX[bold]➜$FX[no-bold]$FX[reset] "
 RPROMPT='$(common_git_status)%* - $(common_battery_level)'
 
+# Check to see if tmux is running if not reattach
+if [ -z "$TMUX" ]
+then
+	    tmux attach -t TMUX || tmux new -s TMUX
+fi
 
 # Git status - This will generate the branch name for rprompt. It will color it depending on its git stage
 common_git_status() {
