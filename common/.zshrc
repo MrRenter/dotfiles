@@ -28,6 +28,8 @@ function colormap() {
   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
 
+neofetch --ascii ~/dinoCage/dotfiles/common/scripts/asciiraptor
+
 #Aliassssss
 #I should check to see if exa exists and if not set it to ls --color
 alias ls="exa --icons --group-directories-first"
@@ -56,7 +58,7 @@ RPROMPT='$(common_git_status)%* - $(common_battery_level)'
 # Check to see if tmux is running if not reattach
 if [ -z "$TMUX" ]
 then
-	    tmux attach -t TMUX || tmux new -s TMUX
+#	tmux attach -t TMUX || tmux new -s TMUX
 fi
 
 # Git status - This will generate the branch name for rprompt. It will color it depending on its git stage
